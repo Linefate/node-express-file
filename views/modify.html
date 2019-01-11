@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    </head>
+    <body>
+	<div style="width: 60%;margin: 0 auto">
+		<h3>修改用户</h3>
+		<form action="/modify" method="post">
+			<!-- 使用隐藏区域带id参数 -->
+			<input type="hidden" class="form-control" required="required" id="exampleInputEmail1" 	aria-describedby="emailHelp" name="id" value="{{ user.id}}">
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">姓名:</label>
+		    <input type="text" class="form-control" required="required" id="exampleInputEmail1" 	aria-describedby="emailHelp" name="name" value="{{ user.name}}" placeholder="请输入姓名">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">年龄：</label>
+		    <input type="text" class="form-control" required="required" name="age" id="exampleInputPassword1" value="{{ user.age }}" 	placeholder="请输入年龄">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">性别:</label>
+		    <input type="text" class="form-control" id="exampleInputEmail1" 	aria-describedby="emailHelp" name="gender" required="required" value="{{ user.gender}}" placeholder="请输入性别">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">性别:</label>
+		    <input type="text" class="form-control" id="exampleInputEmail1" 	aria-describedby="emailHelp" name="type" required="required" value="{{ user.type}}" placeholder="请输入性别">
+		  </div>
+		  <div style="margin-top: 10px">
+		  	 <button type="submit" class="btn btn-primary">修改</button>
+		  </div>
+		</form> 	
+	</div>	
+    </body>
+</html>

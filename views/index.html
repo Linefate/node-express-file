@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    </head>
+    <body>
+   	<h3 style="text-align: center">简易管理系统</h3>
+   	<a class="btn btn-primary" href="/add">添加学生</a>
+    <table class="table table-striped table-hover" style="text-align: center">
+	  <thead>
+	    <tr>
+	      <th scope="col">id</th>
+	      <th scope="col">姓名</th>
+	      <th scope="col">年龄</th>
+	      <th scope="col">性别</th>
+	      <th scope="col">用户类型</th>
+	      <th scope="col">操作</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    {{ each users}}
+	     <tr>
+	      <td>{{ $value.id }}</td>
+	      <td>{{ $value.name }}</td>
+	      <td>{{ $value.age }}</td>
+	      <td>{{ $value.gender }}</td>
+	      <td>{{ $value.type }}</td>
+	      <td>
+	      	<a href="/modify?id={{ $value.id }}"><button class="btn btn-info"">修改</button></a>
+	      	<a href="/delete?id= {{ $value.id }}"><button class="btn btn-danger"">删除</button></a>
+	      </td>
+	    </tr>
+	    {{/each}}
+	  </tbody>
+	</table>
+    </body>
+</html>
